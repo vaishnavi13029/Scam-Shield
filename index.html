@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield - Scam Message Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🛡️</span>
+            <span>ScamShield</span>
+        </div>
+
+        <div class="tagline">
+            Pause. Analyze. Stay Safe.
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="badge">AI-INSPIRED SCAM DETECTION</div>
+
+            <h1>Is this message <span>safe?</span></h1>
+
+            <p>
+                Paste a suspicious SMS, email, or message below.
+                ScamShield analyzes common warning signs and gives you
+                an understandable risk assessment.
+            </p>
+        </section>
+
+
+        <!-- ANALYZER -->
+        <section class="analyzer-card">
+
+            <div class="section-heading">
+                <h2>🔍 Analyze a Message</h2>
+                <p>Paste the suspicious message below.</p>
+            </div>
+
+            <textarea
+                id="messageInput"
+                placeholder="Example: URGENT! Your bank account will be blocked today. Click this link and enter your OTP..."
+            ></textarea>
+
+            <div class="button-row">
+
+                <button id="analyzeBtn" class="analyze-btn">
+                    🔎 Analyze Message
+                </button>
+
+                <button id="clearBtn" class="clear-btn">
+                    Clear
+                </button>
+
+            </div>
+
+            <div class="examples">
+                <span>Try an example:</span>
+
+                <button onclick="loadExample('bank')">
+                    🏦 Bank Scam
+                </button>
+
+                <button onclick="loadExample('prize')">
+                    🎁 Prize Scam
+                </button>
+
+                <button onclick="loadExample('normal')">
+                    💬 Normal Message
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+        <section id="results" class="results hidden">
+
+            <div class="result-top">
+
+                <div>
+                    <p class="small-label">RISK ASSESSMENT</p>
+                    <h2 id="riskLevel">---</h2>
+                </div>
+
+                <div class="score-circle">
+                    <span id="riskScore">0</span>
+                    <small>/100</small>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="progress-container">
+                <div id="riskBar" class="risk-bar"></div>
+            </div>
+
+
+            <!-- Summary -->
+            <div class="summary-box">
+                <h3>📋 Analysis Summary</h3>
+                <p id="summary">
+                    ---
+                </p>
+            </div>
+
+
+            <!-- Warning signs -->
+            <div class="warning-section">
+
+    <div class="section-title-row">
+
+        <div>
+            <h3>🚨 Why was this flagged?</h3>
+
+            <p class="section-subtitle">
+                Detected indicators and supporting evidence
+            </p>
+        </div>
+
+        <span class="scan-badge">SCAN BREAKDOWN</span>
+
+    </div>
+
+    <div id="warningList" class="warning-list">
+    </div>
+
+</div>
+
+
+            <!-- Safety advice -->
+            <div class="safety-box">
+
+                <h3>🛡️ Safety Advice</h3>
+
+                <ul id="safetyList">
+                </ul>
+
+            </div>
+
+
+            <div class="disclaimer">
+                ⚠️ ScamShield provides a risk assessment based on detected
+                patterns. It does not guarantee that a message is genuine
+                or fraudulent.
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="how-section">
+
+            <h2>How ScamShield Works</h2>
+
+            <div class="steps">
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Paste</h3>
+                    <p>Paste the suspicious message.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Detect</h3>
+                    <p>Look for common scam indicators.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Score</h3>
+                    <p>Calculate an overall risk score.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Explain</h3>
+                    <p>Show users why the message was flagged.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>ScamShield © 2026 | Built for Hackathon Demo</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
